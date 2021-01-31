@@ -72,7 +72,12 @@ function filterTasks(e) {
 
     tasks.forEach(
         function(currentValue) {
-            console.log(currentValue.textContent)
+            if ((currentValue.textContent).indexOf(searchInput) > -1) {
+                currentValue.style.display = "block";
+            }
+            else {
+                currentValue.style.display = "none";
+            }
     });  
 }
 
