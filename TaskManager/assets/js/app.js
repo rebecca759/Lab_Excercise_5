@@ -64,10 +64,17 @@ function clearAllTasks() {
 }
 
 //Filter tasks function definition
-function filterTasks(e) {
-    console.log("Task filter ...")
-}
 
+function filterTasks(e) {
+    let searchInput = filter.value;
+    
+    let tasks = document.querySelectorAll('.collection-item');
+
+    tasks.forEach(
+        function(currentValue) {
+            console.log(currentValue.textContent)
+    });  
+}
 
 //Remove Task Function definition
 function removeTask(e) {
@@ -76,7 +83,6 @@ function removeTask(e) {
             e.target.parentElement.parentElement.remove()
         }
     }
-
 }
 
 // Reload Page Function 
