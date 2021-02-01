@@ -13,6 +13,7 @@
     margin-left: 1%;
     margin-bottom: 2%;
     border: solid rgb(143, 143, 143) 2px;
+    font-size: 18px;
 }
 
 button {
@@ -37,12 +38,16 @@ button:focus, button:active {
     outline: none;
 }
 
-.equal {
+#equal {
     background-color: rgb(255, 55, 55);
     color: #ffffff;
 }
 
-.equal:hover {
+#equal:hover {
     background-color: rgba(255, 55, 55, 0.767);
     color: #ffffff;
+}
+
+.op:active, .op:focus {
+    border: solid black 1px;
 }

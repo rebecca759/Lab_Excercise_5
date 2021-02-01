@@ -1,3 +1,7 @@
+$(document).ready(function() {
+    $(".dropdown-trigger").dropdown();
+});
+
 // Define UI Variables 
 
 const taskInput = document.querySelector('#task');               //the task input text field
@@ -11,6 +15,10 @@ const taskList = document.querySelector('.collection');          //The ul
 const clearBtn = document.querySelector('.clear-tasks');      //the all task clear button
 
 const reloadIcon = document.querySelector('.fa'); //the reload button at the top right of navigation
+
+const dropdown = document.querySelector('#dropdown1');
+
+const dropdownSelected = document.querySelector('.dropdown-trigger');
 
 //Add Event Listener [Form, clearBtn and filter search input]
 
@@ -28,6 +36,9 @@ taskList.addEventListener('click',removeTask);
 
 // Event Listener for reload 
 reloadIcon.addEventListener('click', reloadPage);
+
+//Event Listener for dropdown
+dropdown.addEventListener('click',changeText)
 
 //Add New Task Function definition
 function addNewTask(e) {
@@ -55,6 +66,7 @@ function addNewTask(e) {
 
    e.preventDefault();    //disable form submission
 }
+
 
 //Clear Task Function definition
 function clearAllTasks() {
@@ -94,4 +106,11 @@ function removeTask(e) {
 function reloadPage() {
     //using the reload fun on location object 
     location.reload();
+}
+
+//Change text function
+function changeText(e) {
+    if (e.target.nodeName == "A")  {
+        dropdownSelected.innerHTML = e.target.innerHTML + ' ' + '<i class="fa fa-caret-down"></i>';
+    }
 }
